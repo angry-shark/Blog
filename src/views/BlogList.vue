@@ -10,6 +10,6 @@ export default {
 .blogList {
   width: 300px;
   height: 800px;
-  outline: 1px solid red;
+  border: 1px solid red;
 }
 </style>
