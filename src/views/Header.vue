@@ -27,7 +27,6 @@
 </template>
 <style lang="scss">
 .siteHeader {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 16px;
   padding: 0 20px;
   border-bottom: 1px solid rgb(240, 240, 240);

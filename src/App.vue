@@ -31,9 +31,12 @@ body,
 #app {
   height: 100%;
 }
-body {
+body,ul,ol,p {
   margin: 0;
   padding: 0;
+}
+ul, ol{
+  list-style: none;
 }
 input,
 textarea {
