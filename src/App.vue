@@ -3,7 +3,7 @@
     <n-header></n-header>
     <main class="blogShow">
       <n-blog-list></n-blog-list>
-      <n-write-blog></n-write-blog>
+      <component :is="'n-write-blog'"></component>
     </main>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
     "n-header": Header,
     "n-blog-list": BlogList,
     "n-write-blog": WriteBlog
-  }
+  },
 };
 </script>
 
@@ -31,11 +31,15 @@ body,
 #app {
   height: 100%;
 }
-body,ul,ol,p {
+body,
+ul,
+ol,
+p {
   margin: 0;
   padding: 0;
 }
-ul, ol{
+ul,
+ol {
   list-style: none;
 }
 input,

@@ -10,7 +10,7 @@ import CommitButton from "../components/WriteBlog/CommitButton";
 import Content from "../components/WriteBlog/Content";
 import Title from "../components/WriteBlog/Title";
 import global from "../Global";
-
+import eventBus from '../eventBus.js'
 export default {
   components: {
     "n-title": Title,
@@ -35,11 +35,18 @@ export default {
           body: this.$refs.content.content
         })
         .then(function(object) {
-          alert('发布文章成功！')
+          alert("发布文章成功！");
           location.reload();
         });
-      
     }
+  },
+  created() {
+    eventBus.$on("getBlogData", (title, content) => {
+      this.article.title = title;
+      this.article.content = content;
+      this.$refs.title.title = title;
+      this.$refs.content.content = content;
+    });
   }
 };
 </script>

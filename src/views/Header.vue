@@ -20,8 +20,7 @@
           <use xlink:href="#icon-fangdajing"></use>
         </svg>
       </div>
-      <span>My Blog</span>
-      <span>New</span>
+      <span>Reading</span>
     </div>
   </header>
 </template>
@@ -55,7 +54,6 @@
         outline: none;
         border: none;
         border-radius: 20px;
-        text-indent: 1em;
       }
       svg.icon {
         cursor: pointer;

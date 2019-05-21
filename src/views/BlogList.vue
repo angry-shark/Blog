@@ -4,11 +4,12 @@
       <li
         v-for="(blog, index) in blogArr"
         :key="index"
+        @click="sendBlogData(blog.attributes.title,blog.attributes.body)"
       >
         <n-icon></n-icon>
         <n-descript>
           <template v-slot:title>{{blog.attributes.title}}</template>
-          <template v-slot:descript>{{blog.attributes.body}}</template>
+          <template v-slot:descript>{{blog.attributes.body.replace(/#/g,'')}}</template>
         </n-descript>
       </li>
     </ul>
@@ -18,6 +19,7 @@
 import global from "../Global";
 import Icon from "../components/BlogList/Icon";
 import Descript from '../components/BlogList/Descript'
+import eventBus from '../eventBus'
 export default {
   components: {
     "n-icon": Icon,
@@ -27,6 +29,11 @@ export default {
     return {
       blogArr: []
     };
+  },
+  methods: {
+    sendBlogData(title,content){
+      eventBus.$emit('getBlogData',title,content)
+    }
   },
   mounted() {
     var query = new global.AV.Query("blog");
@@ -57,6 +64,7 @@ export default {
     background-color: rgb(64, 182, 130);
   }
   li {
+    cursor: pointer;
     position: relative;
     display: flex;
     justify-content: space-between;

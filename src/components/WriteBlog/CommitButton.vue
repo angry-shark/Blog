@@ -14,8 +14,8 @@ button.commit {
   cursor: pointer;
   border-radius: 16px;
   position: absolute;
-  right: 25px;
-  bottom: 0;
+  right: 20px;
+  bottom: 10px;
 }
 button.commit:focus {
   outline: none;
