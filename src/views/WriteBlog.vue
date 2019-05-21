@@ -35,7 +35,8 @@ export default {
           body: this.$refs.content.content
         })
         .then(function(object) {
-          alert("LeanCloud Rocks!");
+          alert('发布文章成功！')
+          location.reload();
         });
       
     }

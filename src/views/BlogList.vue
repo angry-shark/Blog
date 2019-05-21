@@ -6,10 +6,10 @@
         :key="index"
       >
         <n-icon></n-icon>
-        <div class="descript">
-          <span class="descriptTitle">JSON详解</span>
-          <p class="descriptP">这是一段描述描述这是一段描述描述这是一段描述描述这是一段描述描述这是一段描述描述这是一段描述描述</p>
-        </div>
+        <n-descript>
+          <template v-slot:title>{{blog.attributes.title}}</template>
+          <template v-slot:descript>{{blog.attributes.body}}</template>
+        </n-descript>
       </li>
     </ul>
   </div>
@@ -20,7 +20,8 @@ import Icon from "../components/BlogList/Icon";
 import Descript from '../components/BlogList/Descript'
 export default {
   components: {
-    "n-icon": Icon
+    "n-icon": Icon,
+    'n-descript': Descript
   },
   data() {
     return {
@@ -33,7 +34,7 @@ export default {
     query
       .find()
       .then(data => {
-        this.blogArr = data;
+        this.blogArr = data.reverse();
       })
       .catch(function(error) {
         alert(JSON.stringify(error));
